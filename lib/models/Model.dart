@@ -17,11 +17,11 @@ class Diccionary {
     this.sourceUrls,
   });
 
-  String? word;
-  List<Phonetic>? phonetics;
-  List<Meaning>? meanings;
-  License? license;
-  List<String>? sourceUrls;
+  String? word="";
+  List<Phonetic>? phonetics=[];
+  List<Meaning>? meanings=[];
+  License? license=License();
+  List<String>? sourceUrls=[];
 
   factory Diccionary.fromJson(Map<String, dynamic> json) => Diccionary(
     word: json["word"],
@@ -46,8 +46,8 @@ class License {
     this.url,
   });
 
-  String? name;
-  String? url;
+  String? name="";
+  String? url="";
 
   factory License.fromJson(Map<String, dynamic> json) => License(
     name: json["name"],
@@ -68,10 +68,10 @@ class Meaning {
     this.antonyms,
   });
 
-  String? partOfSpeech;
-  List<Definition>?definitions;
-  List<String>? synonyms;
-  List<String>? antonyms;
+  String? partOfSpeech="";
+  List<Definition>?definitions=[];
+  List<String>? synonyms=[];
+  List<String>? antonyms=[];
 
   factory Meaning.fromJson(Map<String, dynamic> json) => Meaning(
     partOfSpeech: json["partOfSpeech"],
@@ -97,9 +97,9 @@ class Definition {
   });
 
   String? definition;
-  List<dynamic>? synonyms;
-  List<dynamic>? antonyms;
-  String? example;
+  List<dynamic>? synonyms=[];
+  List<dynamic>? antonyms=[];
+  String? example="";
 
   factory Definition.fromJson(Map<String, dynamic> json) => Definition(
     definition: json["definition"],
@@ -124,10 +124,10 @@ class Phonetic {
     this.text,
   });
 
-  String? audio;
-  String? sourceUrl;
-  License? license;
-  String? text;
+  String? audio='';
+  String? sourceUrl='';
+  License? license=License();
+  String? text="";
 
   factory Phonetic.fromJson(Map<String, dynamic> json) => Phonetic(
     audio: json["audio"],
